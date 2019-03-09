@@ -2,6 +2,9 @@ const express = require('express');
 const dbClient = require("mongodb").MongoClient;
 const app = express();
 const port = 3000;
+app.get('/',(req, res) => {
+    res.send('Server is work');
+});
 app.get(/hotels(\/d)?/, (request, response) => {
     console.log(request.url.split('/'));
     const { url } = request;
