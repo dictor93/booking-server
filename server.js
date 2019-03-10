@@ -1,7 +1,7 @@
 const express = require('express');
 const dbClient = require("mongodb").MongoClient;
 const app = express();
-const port = 80;
+const port = 8080;
 app.get('/',(req, res) => {
     res.send('Server is work');
 });
