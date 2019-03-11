@@ -1,6 +1,8 @@
 const express = require('express');
 const dbClient = require("mongodb").MongoClient;
+var cors = require('cors');
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 5000;
 
 app.get(/hotels(\/d)?/, (request, response) => {
