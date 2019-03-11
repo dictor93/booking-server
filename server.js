@@ -10,12 +10,12 @@ app.get(/hotels(\/d)?/, (request, response) => {
     const { url } = request;
     const hotelId = url.split('/')[2];
     console.log(hotelId);
-    dbClient.connect("mongodb://localhost:27017/", function(err, client){
+    dbClient.connect("mongodb://admin:kbvbityrj22@ds163825.mlab.com:63825/heroku_21ltqj5s", function(err, client){
 	    if(err){
             response.statusCode = 500;
             response.send()
         }else{
-            const db = client.db('Booking');
+            const db = client.db('heroku_21ltqj5s');
             const collection = db.collection('Hotels'); 
             collection.find(hotelId?{id: parseInt(hotelId)}: {})
             .toArray(function(err,docs){
