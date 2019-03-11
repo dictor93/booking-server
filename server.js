@@ -2,9 +2,7 @@ const express = require('express');
 const dbClient = require("mongodb").MongoClient;
 const app = express();
 const port = process.env.PORT || 5000;
-app.get('/',(req, res) => {
-    res.send('Server is work');
-});
+
 app.get(/hotels(\/d)?/, (request, response) => {
     console.log(request.url.split('/'));
     const { url } = request;
@@ -13,7 +11,7 @@ app.get(/hotels(\/d)?/, (request, response) => {
     dbClient.connect("mongodb://admin:kbvbityrj22@ds163825.mlab.com:63825/heroku_21ltqj5s", function(err, client){
 	    if(err){
             response.statusCode = 500;
-            response.send()
+            response.send('somwthing wrong');
         }else{
             const db = client.db('heroku_21ltqj5s');
             const collection = db.collection('Hotels'); 
@@ -29,6 +27,11 @@ app.get(/hotels(\/d)?/, (request, response) => {
         }
     });
 });
+
+app.get(/\/.?/,(req, res) => {
+    res.send('Server is work');
+});
+
 app.listen(port, (err) => {
     if (err) {
         return console.log('something bad happened', err)
