@@ -4,7 +4,8 @@
   "description": "api for hillel angular application",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": ".\\node_modules\\.bin\\json-server .\\server-data.json"
   },
   "author": "Limishenko.V",
   "license": "ISC",
