@@ -1,7 +1,9 @@
 const express = require('express');
 const dbClient = require("mongodb").MongoClient;
+const cors = require('cors');
 const app = express();
 const port = 8080;
+app.use(cors());
 app.get('/',(req, res) => {
     res.send('Server is work');
 });
