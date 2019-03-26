@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": ".\\node_modules\\.bin\\json-server -p 8080 .\\server-data.json"
+    "start": "./node_modules/.bin/json-server -p 8080 ./server-data.json"
   },
   "author": "Limishenko.V",
   "license": "ISC",
