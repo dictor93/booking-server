@@ -2,10 +2,9 @@
   "name": "booking-server",
   "version": "0.0.1",
   "description": "api for hillel angular application",
-  "main": "jsonServer.js",
+  "main": "server.js",
   "scripts": {
-    "test": "test",
-    "start": "node jsonServer.js"
+    "test": "test"
   },
   "author": "Limishenko.V",
   "license": "ISC",
